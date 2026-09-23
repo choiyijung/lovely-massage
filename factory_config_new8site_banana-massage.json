@@ -1,0 +1,55 @@
+{
+  "target": "D:\\massage-sites\\banana-massage",
+  "domain": "https://banana-massage.example",
+  "brand": {
+    "old": "러블리마사지",
+    "new": "바나나마사지"
+  },
+  "shops": {
+    "001": {
+      "name": "",
+      "phone": ""
+    },
+    "002": {
+      "name": "",
+      "phone": ""
+    },
+    "003": {
+      "name": "",
+      "phone": ""
+    },
+    "004": {
+      "name": "",
+      "phone": ""
+    },
+    "005": {
+      "name": "",
+      "phone": ""
+    }
+  },
+  "text_replacements": {},
+  "design": {
+    "colors": {
+      "#1D4ED8": "#1D4ED8",
+      "#1E40AF": "#1E40AF",
+      "#60A5FA": "#60A5FA",
+      "#BFDBFE": "#BFDBFE",
+      "#EFF6FF": "#EFF6FF",
+      "#F8FAFF": "#F8FAFF",
+      "#0F766E": "#0F766E"
+    },
+    "images": {
+      "/assets/images/special-og/seoul-chuljangmassage-04.png": ""
+    }
+  },
+  "regions": {
+    "seoul": true,
+    "gyeonggi": true,
+    "incheon": true,
+    "other": true
+  },
+  "content_seed": "banana-massage-new8-A",
+  "shop_replacements": {},
+  "v4_assignments": "E:\\massage-auto-test\\factory_v3_shop_assignments_new8.csv",
+  "v4_site_slug": "banana-massage"
+}

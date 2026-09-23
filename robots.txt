@@ -1,0 +1,11 @@
+﻿User-agent: *
+Allow: /
+
+# Search/account/dynamic demo pages are intentionally excluded from indexing.
+Disallow: /search.html
+Disallow: /login.html
+Disallow: /join.html
+Disallow: /mypage.html
+Disallow: /shop.html
+
+Sitemap: https://lovelymassage.shop/sitemap.xml

@@ -1,0 +1,52 @@
+{
+  "target": "D:\\massage-sites\\massage-v3-B",
+  "domain": "https://massage-v3-b.example",
+  "brand": {
+    "old": "러블리마사지",
+    "new": "코스안내마사지"
+  },
+  "shops": {
+    "001": {
+      "name": "",
+      "phone": ""
+    },
+    "002": {
+      "name": "",
+      "phone": ""
+    },
+    "003": {
+      "name": "",
+      "phone": ""
+    },
+    "004": {
+      "name": "",
+      "phone": ""
+    },
+    "005": {
+      "name": "",
+      "phone": ""
+    }
+  },
+  "text_replacements": {},
+  "design": {
+    "colors": {
+      "#1D4ED8": "#9A3412",
+      "#1E40AF": "#7C2D12",
+      "#60A5FA": "#FB923C",
+      "#BFDBFE": "#FED7AA",
+      "#EFF6FF": "#FFF7ED",
+      "#F8FAFF": "#FFFBF5",
+      "#0F766E": "#7C3AED"
+    },
+    "images": {
+      "/assets/images/special-og/seoul-chuljangmassage-04.png": ""
+    }
+  },
+  "regions": {
+    "seoul": true,
+    "gyeonggi": true,
+    "incheon": true,
+    "other": true
+  },
+  "content_seed": "massage-v3-course-B-20260922"
+}

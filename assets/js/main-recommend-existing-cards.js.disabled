@@ -1,0 +1,63 @@
+window.ML_EXISTING_RECOMMEND_DATA={"vip":[{"shop":"한국미인테라피","region":"서울 · 경기 · 인천","price":"100,000원~","image":"/assets/images/main-recommend/vip-01.svg","link":"/shops/seoul/gangnam-gu/한국미인테라피/index.html","desc":"한국미인테라피 업체의 지역·코스·이용 정보를 한눈에 확인할 수 있는 VIP 추천입니다. 원하는 일정에 맞춰 상세 안내를 확인해보세요.","sort":1},{"shop":"너무이쁜테라피","region":"서울 · 경기 · 인천","price":"60,000원~","image":"/assets/images/main-recommend/vip-02.svg","link":"/shops/seoul/gangnam-gu/역삼동/너무이쁜테라피/index.html","desc":"너무이쁜테라피 업체의 지역·코스·이용 정보를 한눈에 확인할 수 있는 VIP 추천입니다. 원하는 일정에 맞춰 상세 안내를 확인해보세요.","sort":2},{"shop":"love테라피","region":"서울 · 경기 · 인천","price":"60,000원~","image":"/assets/images/main-recommend/vip-03.svg","link":"/shops/seoul/gangnam-gu/역삼동/love테라피/index.html","desc":"love테라피 업체의 지역·코스·이용 정보를 한눈에 확인할 수 있는 VIP 추천입니다. 원하는 일정에 맞춰 상세 안내를 확인해보세요.","sort":3},{"shop":"프리미엄테라피","region":"서울 · 경기 · 인천","price":"60,000원~","image":"/assets/images/main-recommend/vip-04.svg","link":"/shops/seoul/gangnam-gu/역삼동/프리미엄테라피/index.html","desc":"프리미엄테라피 업체의 지역·코스·이용 정보를 한눈에 확인할 수 있는 VIP 추천입니다. 원하는 일정에 맞춰 상세 안내를 확인해보세요.","sort":4}],"premium":[{"shop":"마인드좋은테라피","region":"화성 · 하남 · 군포","price":"60,000원~","image":"/assets/images/main-recommend/premium-01.svg","link":"/shops/seoul/gangdong-gu/강일동/마인드좋은테라피/index.html","desc":"마인드좋은테라피 업체의 이용 조건과 코스 정보를 편리하게 비교할 수 있는 프리미엄 추천입니다. 상세페이지에서 필요한 내용을 확인해보세요.","sort":1},{"shop":"S썸바디테라피","region":"대전 · 청주 · 공주","price":"50,000원~","image":"/assets/images/main-recommend/premium-02.svg","link":"/shops/other/daejeon/daedeok-gu/대화동/S썸바디테라피/index.html","desc":"S썸바디테라피 업체의 이용 조건과 코스 정보를 편리하게 비교할 수 있는 프리미엄 추천입니다. 상세페이지에서 필요한 내용을 확인해보세요.","sort":2},{"shop":"24시미녀테라피","region":"대전","price":"60,000원~","image":"/assets/images/main-recommend/premium-03.svg","link":"/shops/other/daejeon/daedeok-gu/대화동/24시미녀테라피/index.html","desc":"24시미녀테라피 업체의 이용 조건과 코스 정보를 편리하게 비교할 수 있는 프리미엄 추천입니다. 상세페이지에서 필요한 내용을 확인해보세요.","sort":3},{"shop":"레드테라피","region":"청주","price":"60,000원~","image":"/assets/images/main-recommend/premium-04.svg","link":"/shops/other/cheongju/sangdang-gu/가덕면/레드테라피/index.html","desc":"레드테라피 업체의 이용 조건과 코스 정보를 편리하게 비교할 수 있는 프리미엄 추천입니다. 상세페이지에서 필요한 내용을 확인해보세요.","sort":4}]};
+(function(){
+  const D=window.ML_EXISTING_RECOMMEND_DATA||{vip:[],premium:[]};
+  const LEGACY=["강남 골드케어","송파 밸런스룸","광교 리셋테라피","부평 온기케어"];
+  const OLD_REGIONS=["서울 강남구","서울 송파구","경기 수원시","인천 부평구"];
+
+  function setCard(h,item){
+    if(!h||!item)return;
+    const card=h.closest("a")||h.closest("article")||h.parentElement?.parentElement||h.parentElement;
+    h.textContent=item.shop;
+
+    if(card){
+      if(card.tagName==="A" && item.link && item.link!=="#") card.setAttribute("href",item.link);
+      const a=card.querySelector("a");
+      if(a && item.link && item.link!=="#") a.setAttribute("href",item.link);
+
+      const img=card.querySelector("img");
+      if(img && item.image){img.setAttribute("src",item.image);img.setAttribute("alt",item.shop);}
+
+      const ps=[...card.querySelectorAll("p")];
+      if(ps.length) ps[0].textContent=item.region;
+
+      const price=[...card.querySelectorAll("b,strong,span")].find(el=>/원/.test((el.textContent||"").trim()));
+      if(price) price.textContent=item.price;
+
+      [...card.querySelectorAll("*")].forEach(el=>{
+        const t=(el.textContent||"").replace(/\s+/g," ").trim();
+        const ix=OLD_REGIONS.indexOf(t);
+        if(ix>=0) el.textContent=item.region;
+      });
+    }
+  }
+
+  function apply(){
+    // 1) 메인에서 예전 4개가 두 번(VIP/PICK) 나타나는 경우: 등장 순서대로 4+4 매핑
+    const legacyH3=[...document.querySelectorAll("h3")].filter(h=>LEGACY.includes((h.textContent||"").trim()));
+    legacyH3.forEach((h,i)=>{
+      const item=i<4 ? D.vip[i] : D.premium[i-4];
+      if(item) setCard(h,item);
+    });
+
+    // 2) vip.html / premium.html처럼 이미 이름만 바뀐 경우에도 링크/이미지/가격을 맞춤
+    const all=[...(D.vip||[]),...(D.premium||[])];
+    [...document.querySelectorAll("h3")].forEach(h=>{
+      const name=(h.textContent||"").trim();
+      const item=all.find(x=>x.shop===name);
+      if(item) setCard(h,item);
+    });
+  }
+
+  function boot(){
+    apply();
+    requestAnimationFrame(apply);
+    let n=0;
+    const timer=setInterval(()=>{apply();if(++n>=24)clearInterval(timer)},250);
+    const mo=new MutationObserver(()=>apply());
+    mo.observe(document.body,{childList:true,subtree:true});
+    setTimeout(()=>mo.disconnect(),8000);
+  }
+
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);
+  else boot();
+})();

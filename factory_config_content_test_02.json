@@ -1,0 +1,52 @@
+{
+  "target": "E:\\massage-content-smoke-test-02",
+  "domain": "",
+  "brand": {
+    "old": "",
+    "new": ""
+  },
+  "shops": {
+    "001": {
+      "name": "",
+      "phone": ""
+    },
+    "002": {
+      "name": "",
+      "phone": ""
+    },
+    "003": {
+      "name": "",
+      "phone": ""
+    },
+    "004": {
+      "name": "",
+      "phone": ""
+    },
+    "005": {
+      "name": "",
+      "phone": ""
+    }
+  },
+  "text_replacements": {},
+  "design": {
+    "colors": {
+      "#1D4ED8": "",
+      "#1E40AF": "",
+      "#60A5FA": "",
+      "#BFDBFE": "",
+      "#EFF6FF": "",
+      "#F8FAFF": "",
+      "#0F766E": ""
+    },
+    "images": {
+      "/assets/images/special-og/seoul-chuljangmassage-04.png": ""
+    }
+  },
+  "regions": {
+    "seoul": true,
+    "gyeonggi": false,
+    "incheon": false,
+    "other": false
+  },
+  "content_seed": "massage-content-test-02"
+}

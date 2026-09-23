@@ -1,0 +1,6 @@
+﻿backup-*/
+*.backup-*
+*.bak
+Thumbs.db
+.DS_Store
+sitemap-paths.txt

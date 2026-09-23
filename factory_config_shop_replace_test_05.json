@@ -1,0 +1,64 @@
+﻿{
+    "target":  "E:\\massage-shop-replace-test-05",
+    "domain":  "https://factory-shop-test-05.example",
+    "brand":  {
+                  "old":  "",
+                  "new":  ""
+              },
+    "shops":  {
+                  "001":  {
+                              "name":  "",
+                              "phone":  ""
+                          },
+                  "002":  {
+                              "name":  "",
+                              "phone":  ""
+                          },
+                  "003":  {
+                              "name":  "",
+                              "phone":  ""
+                          },
+                  "004":  {
+                              "name":  "",
+                              "phone":  ""
+                          },
+                  "005":  {
+                              "name":  "",
+                              "phone":  ""
+                          }
+              },
+    "text_replacements":  {
+
+                          },
+    "design":  {
+                   "colors":  {
+                                  "#1D4ED8":  "",
+                                  "#1E40AF":  "",
+                                  "#60A5FA":  "",
+                                  "#BFDBFE":  "",
+                                  "#EFF6FF":  "",
+                                  "#F8FAFF":  "",
+                                  "#0F766E":  ""
+                              },
+                   "images":  {
+                                  "/assets/images/special-og/seoul-chuljangmassage-04.png":  ""
+                              }
+               },
+    "regions":  {
+                    "seoul":  true,
+                    "gyeonggi":  true,
+                    "incheon":  true,
+                    "other":  true
+                },
+    "content_seed":  "massage-shop-replace-test-05",
+    "shop_replacements":  {
+                              "로제테라피":  {
+                                            "name":  "로제검증테라피",
+                                            "phone":  "0507-9999-1102"
+                                        },
+                              "레이디테라피":  {
+                                             "name":  "레이디검증테라피",
+                                             "phone":  "0507-9999-1101"
+                                         }
+                          }
+}
